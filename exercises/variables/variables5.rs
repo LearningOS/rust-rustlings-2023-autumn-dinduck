@@ -8,6 +8,7 @@
 fn main() {
     let number = "T-H-R-E-E"; // don't change this line
     println!("Spell a Number : {}", number);
-    number = 3; // don't rename this variable
+    // rust变量可以重复定义， 并非是重复， 实则是后变量会前面mask遮蔽掉
+    let number = 3; // don't rename this variable
     println!("Number plus two is : {}", number + 2);
 }
