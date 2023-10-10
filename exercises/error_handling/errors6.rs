@@ -31,6 +31,7 @@ impl ParsePosNonzeroError {
 fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroError> {
     // TODO: change this to return an appropriate error instead of panicking
     // when `parse()` returns an error.
+    // 这里采用 Result 的 map_err 能快速对 Result 枚举进行处理返回错误
     match s.parse() {
         Ok(x) => PositiveNonzeroInteger::new(x).map_err(ParsePosNonzeroError::from_creation),
         Err(x) => Err(ParsePosNonzeroError::from_parseint(x)),

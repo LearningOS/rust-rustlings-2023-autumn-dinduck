@@ -6,9 +6,8 @@
 // Execute `rustlings hint generics1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 fn main() {
-    let mut shopping_list: Vec<?> = Vec::new();
+    // Rust 能自动推导
+    let mut shopping_list: Vec<_> = Vec::new();
     shopping_list.push("milk");
 }
