@@ -27,16 +27,22 @@
 //
 // You should NOT modify any existing code except for adding two lines of attributes.
 
-// I AM NOT DONE
-
+// 从 Rust 代码找到一下函数符号
 extern "Rust" {
     fn my_demo_function(a: u32) -> u32;
     fn my_demo_function_alias(a: u32) -> u32;
 }
 
 mod Foo {
+    // 由于Rust会将符号混淆， 比如 crate::Foo::my_demo_function, 我们只要 my_demo_function 这个符号
     // No `extern` equals `extern "Rust"`.
+    #[no_mangle]
     fn my_demo_function(a: u32) -> u32 {
+        a
+    }
+
+    #[no_mangle]
+    fn my_demo_function_alias(a: u32) -> u32 {
         a
     }
 }
