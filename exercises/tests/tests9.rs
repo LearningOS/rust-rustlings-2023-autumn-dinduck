@@ -43,7 +43,7 @@ mod Foo {
 
     #[no_mangle]
     fn my_demo_function_alias(a: u32) -> u32 {
-        a
+        my_demo_function(a)
     }
 }
 
